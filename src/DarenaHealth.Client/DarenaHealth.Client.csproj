@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <LangVersion>10</LangVersion>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Hl7.Fhir.R4" Version="5.12.2" />
+      <PackageReference Include="System.Text.Json" Version="9.0.9" />
+      <PackageReference Include="System.Net.Http.Json" Version="9.0.9" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DarenaHealth.Models\DarenaHealth.Models.csproj" />
+    </ItemGroup>
+
+</Project>
