@@ -1,0 +1,40 @@
+name: DarenaHealth.Client NuGet Push
+
+on:
+  release:
+    types: [ published ]
+
+env:
+  DARENA_HEALTH_CLIENT_PATH: src/DarenaHealth.Client/DarenaHealth.Client.csproj
+  OUTPUT_PATH: .output
+
+jobs:
+  publish_job:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Validate release tag format
+        run: |
+          TAG="${{ github.ref_name }}"
+          echo "Release tag: $TAG"
+          if [[ ! "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+(-pre[0-9]+)?$ ]]; then
+            echo "❌ Invalid tag format. Must be vX.Y.Z or vX.Y.Z-preX"
+            exit 1
+          fi
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install .NET 9.0.x
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 9.0.x
+
+      - name: Run Pack
+        run: | 
+          dotnet pack ${{ env.DARENA_HEALTH_CLIENT_PATH }} /p:Version=$(echo "${{ github.ref_name }}" | sed -En 's/v(.*)/\1/p') -c Release --include-symbols --include-source -o ${{ env.OUTPUT_PATH }}
+
+      - name: Publish to NuGet
+        run: |
+          ls ${{ env.OUTPUT_PATH }}

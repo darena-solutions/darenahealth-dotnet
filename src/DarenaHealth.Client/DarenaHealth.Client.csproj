@@ -1,19 +1,34 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
-        <LangVersion>10</LangVersion>
-        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <IncludeReferencedProjects>true</IncludeReferencedProjects>
+
+        <PackageId>DarenaHealth.Client</PackageId>
+        <Description>Http client library to work with darenahealth ecosystem.</Description>
+
+        <PackageTags>darena darenahealth meldrx</PackageTags>
+        <Authors>DarenaHealth</Authors>
+        <Company>DarenaHealth</Company>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/darena-solutions/darenahealth-dotnet</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/darena-solutions/darenahealth-dotnet</PackageProjectUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Hl7.Fhir.R4" Version="5.12.2" />
-      <PackageReference Include="System.Text.Json" Version="9.0.9" />
-      <PackageReference Include="System.Net.Http.Json" Version="9.0.9" />
+        <PackageReference Include="Hl7.Fhir.R4" Version="5.12.2"/>
+        <PackageReference Include="System.Text.Json" Version="9.0.9"/>
+        <PackageReference Include="System.Net.Http.Json" Version="9.0.9"/>
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\DarenaHealth.Models\DarenaHealth.Models.csproj" />
+        <ProjectReference Include="..\DarenaHealth.Models\DarenaHealth.Models.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="\"/>
+        <None Include="..\DarenaHealth.Models\bin\$(Configuration)\$(TargetFramework)\DarenaHealth.Models.dll" Pack="true" PackagePath="lib\$(TargetFramework)"/>
     </ItemGroup>
 
 </Project>

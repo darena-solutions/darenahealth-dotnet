@@ -1,9 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
-        <LangVersion>10</LangVersion>
-        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <PackageId>DarenaHealth.Models</PackageId>
+        <Description>DarenaHealth data models library.</Description>
     </PropertyGroup>
 
 </Project>
