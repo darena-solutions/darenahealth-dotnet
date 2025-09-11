@@ -3,5 +3,13 @@
         <TargetFramework>netstandard2.0</TargetFramework>
         <LangVersion>10</LangVersion>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+
+        <PackageTags>darena darenahealth meldrx</PackageTags>
+        <Authors>DarenaHealth</Authors>
+        <Company>DarenaHealth</Company>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/darena-solutions/darenahealth-dotnet</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/darena-solutions/darenahealth-dotnet</PackageProjectUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
 </Project>

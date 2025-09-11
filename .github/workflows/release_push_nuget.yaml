@@ -1,11 +1,10 @@
-name: DarenaHealth.Client NuGet Push
+name: Push DarenaHealth Nuget Packages
 
 on:
   release:
     types: [ published ]
 
 env:
-  DARENA_HEALTH_CLIENT_PATH: src/DarenaHealth.Client/DarenaHealth.Client.csproj
   OUTPUT_PATH: .output
 
 jobs:
@@ -33,7 +32,7 @@ jobs:
 
       - name: Run Pack
         run: | 
-          dotnet pack ${{ env.DARENA_HEALTH_CLIENT_PATH }} /p:Version=$(echo "${{ github.ref_name }}" | sed -En 's/v(.*)/\1/p') -c Release --include-symbols --include-source -o ${{ env.OUTPUT_PATH }}
+          dotnet pack /p:Version=$(echo "${{ github.ref_name }}" | sed -En 's/v(.*)/\1/p') -c Release --include-symbols --include-source -o ${{ env.OUTPUT_PATH }}
 
       - name: Publish to NuGet
         run: |

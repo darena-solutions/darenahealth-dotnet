@@ -5,14 +5,6 @@
 
         <PackageId>DarenaHealth.Client</PackageId>
         <Description>Http client library to work with darenahealth ecosystem.</Description>
-
-        <PackageTags>darena darenahealth meldrx</PackageTags>
-        <Authors>DarenaHealth</Authors>
-        <Company>DarenaHealth</Company>
-        <RepositoryType>git</RepositoryType>
-        <RepositoryUrl>https://github.com/darena-solutions/darenahealth-dotnet</RepositoryUrl>
-        <PackageProjectUrl>https://github.com/darena-solutions/darenahealth-dotnet</PackageProjectUrl>
-        <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
@@ -28,7 +20,6 @@
 
     <ItemGroup>
         <None Include="README.md" Pack="true" PackagePath="\"/>
-        <None Include="..\DarenaHealth.Models\bin\$(Configuration)\$(TargetFramework)\DarenaHealth.Models.dll" Pack="true" PackagePath="lib\$(TargetFramework)"/>
     </ItemGroup>
 
 </Project>
