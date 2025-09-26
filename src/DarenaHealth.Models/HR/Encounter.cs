@@ -30,6 +30,7 @@ public class Encounter : BaseDto
         Goals = new List<Goal>();
         Locations = new List<Location>();
         Coverage = new List<Coverage>();
+        Documents = new List<Document>();
     }
 
     /// <summary>
@@ -191,4 +192,9 @@ public class Encounter : BaseDto
     /// Gets or sets the list of devices for encounter
     /// </summary>
     public List<Coverage> Coverage { get; set; }
+
+    /// <summary>
+    /// Gets or sets the list of documents for encounter
+    /// </summary>
+    public List<Document> Documents { get; set; }
 }
