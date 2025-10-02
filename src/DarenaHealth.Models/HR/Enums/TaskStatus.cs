@@ -1,5 +1,8 @@
 ﻿namespace DarenaHealth.Models.HR.Enums;
 
+/// <summary>
+/// Task status
+/// </summary>
 public enum TaskStatus
 {
     /// <summary>

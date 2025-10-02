@@ -8,6 +8,9 @@ namespace DarenaHealth.Models.HR;
 /// </summary>
 public class Document : PatientBase
 {
+    /// <summary>
+    /// initializes a new instance of Document class
+    /// </summary>
     public Document()
     {
         Authors = new List<AuthorReference>();

@@ -2,6 +2,9 @@
 
 namespace DarenaHealth.Models.HR;
 
+/// <summary>
+/// Observation component
+/// </summary>
 public class ComponentCodeValue
 {
     /// <summary>

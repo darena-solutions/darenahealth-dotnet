@@ -5,12 +5,15 @@ using DarenaHealth.Client.Endpoint.Models.Import;
 
 namespace DarenaHealth.Client.Endpoint;
 
+/// <summary>
+/// Import endpoint for importing data in to the darena health workspace
+/// </summary>
 public class ImportEndpoint
 {
     private readonly HttpClient _client;
     private readonly DarenaHealthClientOptions _options;
 
-    public ImportEndpoint(HttpClient client, DarenaHealthClientOptions options)
+    internal ImportEndpoint(HttpClient client, DarenaHealthClientOptions options)
     {
         _client = client;
         _options = options;
@@ -24,7 +27,12 @@ public class ImportEndpoint
     /// <returns>Import result</returns>
     public async Task<ImportPatientEncounterResponse> ImportPatientEncounterAsync(string workspace, ImportPatientEncounter request)
     {
-        var result = await _client.PostAsJsonAsync($"/api/import/{workspace}/dh", request, _options.JsonOptions);
+        var result = await _client.PostAsJsonAsync(
+            $"/api/import/{workspace}/dh?generateCcda={request.GenerateCcda}",
+            request,
+            _options.JsonOptions
+        );
+
         return await result.Content.ReadFromJsonAsync<ImportPatientEncounterResponse>(_options.FhirJsonOptions);
     }
 }

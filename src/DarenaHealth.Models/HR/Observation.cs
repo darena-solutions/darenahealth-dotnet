@@ -8,6 +8,9 @@ namespace DarenaHealth.Models.HR;
 /// </summary>
 public class Observation : PatientBase
 {
+    /// <summary>
+    /// initializes a new instance of an Observation class
+    /// </summary>
     public Observation()
     {
         Components = new List<ComponentCodeValue>();
@@ -86,7 +89,7 @@ public class Observation : PatientBase
     public CodeValue SpecimenCode { get; set; }
 
     /// <summary>
-    /// Gets or sets the component slice in Observation like (Occupation Industry & Coresponding Code)
+    /// Gets or sets the component slice in Observation like (Occupation Industry and Coresponding Code)
     /// </summary>
     public List<ComponentCodeValue> Components { get; set; }
 

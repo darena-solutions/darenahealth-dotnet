@@ -1,6 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+
         <PackageId>DarenaHealth.Models</PackageId>
         <Description>DarenaHealth data models library.</Description>
     </PropertyGroup>

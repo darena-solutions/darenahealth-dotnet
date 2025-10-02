@@ -1,6 +1,9 @@
 ﻿
 namespace DarenaHealth.Models.HR.Enums;
 
+/// <summary>
+/// Document Format
+/// </summary>
 public enum DocumentFormat
 {
     /// <summary>

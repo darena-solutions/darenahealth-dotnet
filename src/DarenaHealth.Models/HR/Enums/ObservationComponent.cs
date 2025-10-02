@@ -1,6 +1,9 @@
 ﻿
 namespace DarenaHealth.Models.HR.Enums;
 
+/// <summary>
+/// Type of observation component
+/// </summary>
 public enum ObservationComponent
 {
     /// <summary>

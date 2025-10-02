@@ -52,8 +52,14 @@ public class ServiceRequest : PatientBase
     /// </summary>
     public class RequesterReference
     {
+        /// <summary>
+        /// Gets or sets the id of the reference
+        /// </summary>
         public string Id { get; set; }
 
+        /// <summary>
+        /// Gets or sets the type of the reference
+        /// </summary>
         public RequesterType Type { get; set; }
     }
 
@@ -62,8 +68,14 @@ public class ServiceRequest : PatientBase
     /// </summary>
     public class ReasonReference
     {
+        /// <summary>
+        /// Gets or sets the id of the reference
+        /// </summary>
         public string Id { get; set; }
 
+        /// <summary>
+        /// Gets or sets the type of the reference
+        /// </summary>
         public ReasonType Type { get; set; }
     }
 

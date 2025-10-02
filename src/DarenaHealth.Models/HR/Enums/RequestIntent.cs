@@ -1,7 +1,10 @@
 ﻿namespace DarenaHealth.Models.HR.Enums;
 
+/// <summary>
+/// Service Request Intent
+/// </summary>
 public enum RequestIntent
-{        
+{
     /// <summary>
     /// The request is a suggestion made by someone/something that does not have an intention to ensure it occurs and without providing an authorization to act.
     /// </summary>

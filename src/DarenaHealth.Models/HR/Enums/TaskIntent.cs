@@ -1,5 +1,8 @@
 ﻿namespace DarenaHealth.Models.HR.Enums;
 
+/// <summary>
+/// Task intent
+/// </summary>
 public enum TaskIntent
 {
 
