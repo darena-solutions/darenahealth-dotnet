@@ -14,9 +14,11 @@ public class Procedure : PatientBase
     /// </summary>
     public Procedure()
     {
+        Participants = new List<Participant>();
         BodySitesList = new List<CodeValue>();
         ProviderNpis = new List<string>();
         Locations = new List<Location>();
+        Source = new List<SourceReference>();
     }
 
     /// <summary>
@@ -42,7 +44,7 @@ public class Procedure : PatientBase
     /// <summary>
     /// Gets or sets the status
     /// </summary>
-    public string Status { get; set; }
+    public ProcedureStatus Status { get; set; }
 
     /// <summary>
     /// Gets or sets the coded list of body sites
@@ -85,45 +87,57 @@ public class Procedure : PatientBase
     public string Text { get; set; }
 
     /// <summary>
-    /// Gets or sets the id of a referral request
+    /// Reference to the reason for this procedure
     /// </summary>
+    public List<SourceReference> Source { get; set; }
+
+    /// <summary>
+    /// Gets or sets the id of a referral request (use <see cref="Source"/> to specify a service request reference)
+    /// </summary>
+    [Obsolete(ObsoleteReasons.Legacy)]
     public string ReferralId { get; set; }
 
     /// <summary>
     /// Gets or sets the intent of the Service Request
     /// </summary>
+    [Obsolete(ObsoleteReasons.Legacy)]
     public RequestIntent ReferralIntent { get; set; }
 
     /// <summary>
     /// Get the status of the referral request
     /// </summary>
+    [Obsolete(ObsoleteReasons.Legacy)]
     public RequestStatus ReferralStatus { get; set; }
 
     /// <summary>
-    ///  Classification of service request
+    /// Reference to the requester of the referral
     /// </summary>
-    public RequestCategory ReferralCategory { get; set; }
+    public class SourceReference
+    {
+        /// <summary>
+        /// Gets or sets the id of the reference
+        /// </summary>
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the type of the reference
+        /// </summary>
+        public SourceType Type { get; set; }
+    }
 
     /// <summary>
-    /// When was the referral event created
+    /// Referral Source Types
     /// </summary>
-    public DateTime ReferralAuthoredOn { get; set;}
+    public enum SourceType
+    {
+        /// <summary>
+        /// CarePlans
+        /// </summary>
+        CarePlan,
 
-    /// <summary>
-    /// Who/what is requesting service (Practioner, PractionerRole, Patient, RelatedPerson)
-    /// </summary>
-    public string ReferralRequester { get; set; }
-
-    /// <summary>
-    /// Condition | Observation | DiagnosticReport | DocumentReference, which request this service
-    /// </summary>
-    public string ReferralReference { get; set; }
-
-    /// <summary>
-    /// CarePlan | ServiceRequest
-    /// </summary>
-    public string ReferralSource { get; set; }
-
-
-
+        /// <summary>
+        /// ServiceRequest
+        /// </summary>
+        ServiceRequest,
+    }
 }

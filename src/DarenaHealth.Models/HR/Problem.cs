@@ -56,11 +56,6 @@ public class Problem : PatientBase
     /// <summary>
     /// Date of When in resolution/remission
     /// </summary>
-    public DateTime AbatementDateTime {get;set;}
-
-    /// <summary>
-    /// Date of When in resolution/remission
-    /// </summary>
     public DateTime RecordedDate { get; set; }
 
     /// <summary>

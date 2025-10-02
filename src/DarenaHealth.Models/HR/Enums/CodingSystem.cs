@@ -219,15 +219,48 @@ public enum CodingSystem
     /// http://hl7.org/fhir/us/core/CodeSystem/careplan-category
     /// </summary>
     CarePlanCategory = 42,
-        
+
+    /// <summary>
+    /// http://terminology.hl7.org/CodeSystem/PHOccupationalDataForHealthODH
+    /// </summary>
+    PHOccupationalDataForHealthODH = 43,
+
     /// <summary>
     /// Related Person Relationship Code System
     /// http://terminology.hl7.org/CodeSystem/v3-RoleCode
     /// </summary>
-    RelatedPersonRole = 43,
-        
+    RelatedPersonRole = 44,
+
     /// <summary>
-    /// http://terminology.hl7.org/CodeSystem/coverage-type
+    /// http://terminology.hl7.org/CodeSystem/v2-0074
     /// </summary>
-    CoverageType = 44,
+    DiagnosticService = 45,
+
+    /// <summary>
+    /// https://nahdo.org/sopt (2.16.840.1.113883.3.221.5)
+    /// </summary>
+    CoverageType = 46,
+
+    /// <summary>
+    /// http://hl7.org/fhir/sid/us-npi
+    /// </summary>
+    Npi = 48,
+
+    /// <summary>
+    /// Related Person Relationship Code System
+    /// http://terminology.hl7.org/CodeSystem/v2-0131
+    /// </summary>
+    RelatedPersonRoleV2 = 49,
+
+    /// <summary>
+    /// Location Type
+    /// http://terminology.hl7.org/CodeSystem/hsloc
+    /// </summary>
+    Hsloc = 50,
+
+    /// <summary>
+    /// ActReason - Immunization
+    /// http://terminology.hl7.org/CodeSystem/v3-ActReason
+    /// </summary>
+    ActReason = 51,
 }

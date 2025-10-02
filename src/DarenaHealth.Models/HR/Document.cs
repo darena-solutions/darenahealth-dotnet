@@ -8,6 +8,12 @@ namespace DarenaHealth.Models.HR;
 /// </summary>
 public class Document : PatientBase
 {
+    public Document()
+    {
+        Authors = new List<AuthorReference>();
+        Contents = new List<Content>();
+    }
+
     /// <summary>
     /// Document status
     /// </summary>
@@ -19,37 +25,64 @@ public class Document : PatientBase
     public DocumentType DocumentType { get; set; }
 
     /// <summary>
-    /// (USCDI) Practitioners who authored the document
+    /// Gets or sets document authors
     /// </summary>
-    public List<string> PractitionerAuthors { get; set; }
-
-    /// <summary>
-    /// (USCDI) Organizations who authored the document
-    /// </summary>
-    public List<string> OrganizationAuthors { get; set; }
-
-    /// <summary>
-    /// (USCDI) Patients who authored the document
-    /// </summary>
-    public List<string> PatientAuthors { get; set; }
-
-    /// <summary>
-    /// (USCDI) PractitionerRoles who authored the document
-    /// </summary>
-    public List<string> PractitionerRoleAuthors { get; set; }
-
-    /// <summary>
-    /// (USCDI) RelatedPersons who authored the document
-    /// </summary>
-    public List<string> RelatedPersonAuthors { get; set; }
-
-    /// <summary>
-    /// (USCDI) Devices who authored the document
-    /// </summary>
-    public List<string> DeviceAuthors { get; set; }
+    public List<AuthorReference> Authors { get; set; }
 
     /// <summary>
     /// Document referenced
     /// </summary>
     public List<Content> Contents { get; set; }
+
+    /// <summary>
+    /// Document Author
+    /// </summary>
+    public class AuthorReference
+    {
+        /// <summary>
+        /// Gets or sets id of author
+        /// </summary>
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Gets or sets type of author
+        /// </summary>
+        public AuthorType Type { get; set; }
+    }
+
+    /// <summary>
+    /// Type of document authors
+    /// </summary>
+    public enum AuthorType
+    {
+        /// <summary>
+        /// Practitioner
+        /// </summary>
+        Practitioner,
+
+        /// <summary>
+        /// Organization
+        /// </summary>
+        Organization,
+
+        /// <summary>
+        /// Patient
+        /// </summary>
+        Patient,
+
+        /// <summary>
+        /// PractitionerRole
+        /// </summary>
+        PractitionerRole,
+
+        /// <summary>
+        /// RelatedPerson
+        /// </summary>
+        RelatedPerson,
+
+        /// <summary>
+        /// Device
+        /// </summary>
+        Device,
+    }
 }
