@@ -5,8 +5,15 @@ using DarenaHealth.Client.Internal;
 
 namespace DarenaHealth.Client;
 
+/// <summary>
+/// Client to interact with darenahealth system
+/// </summary>
 public class DarenaHealthClient : HttpClient
 {
+    /// <summary>
+    /// creates the client
+    /// </summary>
+    /// <param name="options">client options</param>
     public DarenaHealthClient(DarenaHealthClientOptions options)
     {
         var http = new HttpClient(new AuthenticationHttpClientHandler(options))

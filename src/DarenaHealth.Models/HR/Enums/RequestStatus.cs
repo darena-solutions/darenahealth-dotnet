@@ -1,9 +1,8 @@
-﻿
+﻿namespace DarenaHealth.Models.HR.Enums;
 
-//https://hl7.org/fhir/R4/valueset-request-status.html
-
-namespace DarenaHealth.Models.HR.Enums;
-
+/// <summary>
+/// Service Request Status
+/// </summary>
 public enum RequestStatus
 {
     /// <summary>

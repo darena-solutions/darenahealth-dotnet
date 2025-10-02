@@ -69,4 +69,14 @@ public enum ObservationType
     /// Observations that measure or record any bodily activity that enhances or maintains physical fitness and overall health and wellness. Not under direct supervision of practitioner such as a physical therapist. (e.g., laps swum, steps, sleep data)
     /// </summary>
     Activity = 12,
+
+    /// <summary>
+    /// Disability Status category
+    /// </summary>
+    Disability = 13,
+
+    /// <summary>
+    /// Cognitive or Mental status
+    /// </summary>
+    CognitiveStatus = 14,
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
 using DarenaHealth.Models.HR.Enums;
 
 namespace DarenaHealth.Models.HR;
@@ -17,6 +18,7 @@ public class Patient : BaseDto
         Identifiers = new List<Identifier>();
         Addresses = new List<Address>();
         PhoneNumbers = new List<Phone>();
+        RelatedPeople = new List<RelatedPerson>();
     }
 
     /// <summary>

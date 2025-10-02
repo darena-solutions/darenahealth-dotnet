@@ -20,12 +20,17 @@ public class Organization
     /// Gets or sets the id of organization
     /// </summary>
     public string Id { get; set; }
-        
+
     /// <summary>
     /// Gets or sets the NPI of organization
     /// </summary>
     public string Npi { get; set; }
-        
+
+    /// <summary>
+    /// Gets or sets the National Association of Insurance Commissioners (NAIC) number of organization
+    /// </summary>
+    public string PayerId { get; set; }
+
     /// <summary>
     /// Gets or sets the active status of organization
     /// </summary>

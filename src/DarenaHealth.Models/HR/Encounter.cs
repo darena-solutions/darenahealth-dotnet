@@ -22,6 +22,7 @@ public class Encounter : BaseDto
         Communications = new List<Communication>();
         Problems = new List<Problem>();
         Procedures = new List<Procedure>();
+        ServiceRequests = new List<ServiceRequest>();
         Observations = new List<Observation>();
         CarePlanItems = new List<CarePlan>();
         Devices = new List<Device>();
@@ -152,6 +153,11 @@ public class Encounter : BaseDto
     /// Gets or sets the list of procedures for encounter
     /// </summary>
     public List<Procedure> Procedures { get; set; }
+
+    /// <summary>
+    /// Gets or sets the list of service requests for encounter
+    /// </summary>
+    public List<ServiceRequest> ServiceRequests { get; set; }
 
     /// <summary>
     /// Gets or sets the list of observations for encounter
