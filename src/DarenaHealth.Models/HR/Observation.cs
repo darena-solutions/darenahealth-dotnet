@@ -17,7 +17,13 @@ public class Observation : PatientBase
         Components = new List<ComponentCodeValue>();
         Members = new List<MemberReference>();
         DerivedFrom = new List<DerivedFromReference>();
-    }
+        CodeValues = new List<CodeValue>();
+	}
+
+    /// <summary>
+    /// Gets or sets multiple related coded values simultaneously
+    /// </summary>
+    public List<CodeValue> CodeValues { get; set; }
 
     /// <summary>
     /// Gets or sets the coded values for reason for a missing observation
