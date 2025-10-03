@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DarenaHealth.Models.HR.Enums;
 
 namespace DarenaHealth.Models.HR;
@@ -34,6 +35,11 @@ public class Observation : PatientBase
     public TimeRange ValuePeriod { get; set; }
 
     /// <summary>
+    /// Effective date time of the value of Observation
+    /// </summary>
+    public DateTime ValueEffectiveDate { get; set; }
+
+    /// <summary>
     /// Gets or sets the string value
     /// </summary>
     public string ValueString { get; set; }
@@ -41,7 +47,7 @@ public class Observation : PatientBase
     /// <summary>
     /// Gets or sets a value indicating whether this observation's outcome was <c>true</c> or <c>false</c>
     /// </summary>
-    public bool ValueBoolean { get; set; }
+    public bool? ValueBoolean { get; set; }
 
     /// <summary>
     /// Gets or sets the quantity value
