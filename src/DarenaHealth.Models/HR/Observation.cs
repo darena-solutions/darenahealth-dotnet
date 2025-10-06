@@ -63,7 +63,7 @@ public class Observation : PatientBase
     /// <summary>
     /// Gets or sets the observation type
     /// </summary>
-    public ObservationType AssessmentType { get; set; }
+    public ObservationType? AssessmentType { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether this observation is used to identity the absence of an observation
@@ -108,7 +108,7 @@ public class Observation : PatientBase
     /// <summary>
     /// Category codes used in the US Core Observation Screening Assessment Profile to help identify the type of USCDI Health Status/Assessment data class being reported.
     /// </summary>
-    public ObservationScreeningAssessment ScreeningType { get; set; }
+    public ObservationScreeningAssessment? ScreeningType { get; set; }
 
     /// <summary>
     /// Reference to multi-select responses
