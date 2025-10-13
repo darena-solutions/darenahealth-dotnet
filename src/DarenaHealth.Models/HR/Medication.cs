@@ -76,9 +76,9 @@ public class Medication : PatientBase
     /// Gets or sets the medication's Category
     /// </summary>
     public MedicationRequestCategory Category { get; set; }
-        
+
     /// <summary>
-    /// Gets or sets the medication's Category
+    /// Gets or sets the medication Requester
     /// </summary>
     public MedicationRequester Requester { get; set; }
 
@@ -111,17 +111,17 @@ public class Medication : PatientBase
     /// Gets or sets the Free text dosage instructions e.g. SIG
     /// </summary>
     public string DosageInstructions { get; set; }
-        
+
     /// <summary>
     /// Gets or sets the dose frequency of medication
     /// </summary>
     public double? DoseFrequency { get; set; }
-        
+
     /// <summary>
     /// Gets or sets the period of frequency for medication
     /// </summary>
     public double? DosePeriod { get; set; }
-        
+
     /// <summary>
     /// Gets or sets the dose frequency by unit of time for this medication
     /// </summary>
@@ -136,29 +136,29 @@ public class Medication : PatientBase
     /// Gets or sets the number of refills
     /// </summary>
     public double Refills { get; set; }
-        
+
     /// <summary>
     /// Gets or sets the amount of medication to supply per dispense
     /// </summary>
     public Quantity RefillQuantity { get; set; }
-        
+
     /// <summary>
     /// Gets or sets the reported value
     /// </summary>
-    public bool Reported { get; set; }        
-        
+    public bool Reported { get; set; }
+
     /// <summary>
     /// Gets or sets the Medication Dispense Type (Trial fill, partial fill, emergency fill, etc.)
     /// </summary>
     public MedicationDispenseType? DispenseType { get; set; }
-        
+
     /// <summary>
     /// Gets or sets the Medication order that authorizes the dispense (Reference(US Core MedicationRequest Profile))
     /// </summary>
-    public string AuthorizingRequest { get; set; }  
-        
+    public string AuthorizingRequest { get; set; }
+
     /// <summary>
     /// Gets or sets the Medication reference
     /// </summary>
-    public string MedicationReference { get; set; }        
+    public string MedicationReference { get; set; }
 }

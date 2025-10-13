@@ -30,6 +30,7 @@ public class Encounter : BaseDto
         CareTeams = new List<CareTeam>();
         Goals = new List<Goal>();
         Locations = new List<Location>();
+        DiagnosticReports = new List<DiagnosticReport>();
         Coverage = new List<Coverage>();
         Documents = new List<Document>();
     }
@@ -193,6 +194,11 @@ public class Encounter : BaseDto
     /// Gets or sets the list of care teams for encounter
     /// </summary>
     public List<CareTeam> CareTeams { get; set; }
+
+    /// <summary>
+    /// Gets or sets the list of diagnostic reports
+    /// </summary>
+    public List<DiagnosticReport> DiagnosticReports { get; set; }
 
     /// <summary>
     /// Gets or sets the list of devices for encounter
