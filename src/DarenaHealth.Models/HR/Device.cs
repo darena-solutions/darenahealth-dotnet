@@ -44,4 +44,9 @@ public class Device : PatientBase
     /// Gets or sets the Serial number assigned by the manufacturer
     /// </summary>
     public string SerialNumber { get; set; }
+        
+    /// <summary>
+    /// Gets or sets the Assigning Authority of the device (FDA/other)
+    /// </summary>
+    public string AssigningAuthority { get; set; }
 }
