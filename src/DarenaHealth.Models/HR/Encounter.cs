@@ -101,6 +101,16 @@ public class Encounter : BaseDto
     public CodeValue LocationCode { get; set; }
 
     /// <summary>
+    /// Gets or sets the encounter locations references
+    /// </summary>
+    public List<Location> EncounterLocations { get; set; }
+
+    /// <summary>
+    /// Gets or sets the encounter locations references
+    /// </summary>
+    public List<Participant> EncounterParticipants { get; set; }
+
+    /// <summary>
     /// Gets or sets the time period a patient was admitted and then discharged from a location
     /// </summary>
     public TimeRange LocationPeriod { get; set; }
