@@ -25,19 +25,58 @@ public class Allergy : PatientBase
     /// Gets or sets the id of the patient this allergy belongs to
     /// </summary>
     public string PatientId { get; set; }
-        
+
     /// <summary>
     /// Gets or sets the clinical status of the allergy: active | inactive | resolved
     /// </summary>
     public AllergyClinicalStatus ClinicalStatus { get; set; }
-        
+
     /// <summary>
     /// Gets or sets the verification status of the allergy: unconfirmed | confirmed | refuted | error
     /// </summary>
     public AllergyVerificationStatus VerificationStatus { get; set; }
-        
+
     /// <summary>
     /// Gets or sets the coded value for the allergy reaction
     /// </summary>
-    public List<CodeValue> Reactions { get; set; }
+    public List<AllergyReaction> Reactions { get; set; }
+
+
+    /// <summary>
+    /// Allergy reaction
+    /// </summary>
+    public class AllergyReaction
+    {
+        /// <summary>
+        /// Gets or sets the coded value for the allergy reaction
+        /// </summary>
+        public CodeValue Reaction { get; set; }
+
+        /// <summary>
+        /// Gets or sets the value for the allergy severity
+        /// </summary>
+        public AllergySeverity? Severity { get; set; }
+    }
+
+    /// <summary>
+    /// Allergy severity
+    /// https://hl7.org/fhir/R4/codesystem-reaction-event-severity.html
+    /// </summary>
+    public enum AllergySeverity
+    {
+        /// <summary>
+        /// Mild
+        /// </summary>
+        Mild = 0,
+
+        /// <summary>
+        /// Moderate
+        /// </summary>
+        Moderate = 1,
+
+        /// <summary>
+        /// Severe
+        /// </summary>
+        Severe = 2,
+    }
 }
