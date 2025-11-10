@@ -14,4 +14,9 @@ public class DeviceUdiCarrier
     /// Gets or sets The UDI Human Readable Barcode String
     /// </summary>
     public string CarrierHrf { get; set; }
+    
+    /// <summary>
+    /// Gets or sets the UDI Issuing Organization
+    /// </summary>
+    public string Issuer { get; set; }
 }
