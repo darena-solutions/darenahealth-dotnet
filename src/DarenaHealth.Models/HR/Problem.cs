@@ -54,7 +54,7 @@ public class Problem : PatientBase
     public string PatientId { get; set; }
 
     /// <summary>
-    /// Date of When in resolution/remission
+    /// Date of when problem was first recorded
     /// </summary>
     public DateTime RecordedDate { get; set; }
 

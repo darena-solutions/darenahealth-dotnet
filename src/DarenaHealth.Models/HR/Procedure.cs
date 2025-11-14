@@ -90,6 +90,11 @@ public class Procedure : PatientBase
     /// Reference to the reason for this procedure
     /// </summary>
     public List<SourceReference> Source { get; set; }
+        
+    /// <summary>
+    /// Get the focal device of the procedure
+    /// </summary>
+    public List<FocalDevice> ManipulatedDevices { get; set; }
 
     /// <summary>
     /// Gets or sets the id of a referral request (use <see cref="Source"/> to specify a service request reference)
@@ -139,5 +144,21 @@ public class Procedure : PatientBase
         /// ServiceRequest
         /// </summary>
         ServiceRequest,
+    }
+    
+    /// <summary>
+    /// Procedure Manipulated, implanted, or removed device
+    /// </summary>
+    public class FocalDevice
+    {
+        /// <summary>
+        /// Gets or sets the coded action value
+        /// </summary>
+        public CodeValue ActionCode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the device id
+        /// </summary>
+        public string DeviceId { get; set; }
     }
 }

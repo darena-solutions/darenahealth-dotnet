@@ -23,17 +23,17 @@ public class PractitionerRole
     public string PractitionerId { get; set; }
         
     /// <summary>
-    /// Gets or sets the PractitionerId
+    /// Gets or sets The location(s) at which this practitioner provides care
     /// </summary>
     public List<Location> Locations { get; set; }
         
     /// <summary>
-    /// Gets or sets the PractitionerId
+    /// Gets or sets the list of healthcare services that this worker provides for this role's Organization/Location(s)
     /// </summary>
     public List<HealthcareService> HealthcareServices { get; set; }
         
     /// <summary>
-    /// Gets or sets the PractitionerId
+    /// Gets or sets the Technical endpoints providing access to services operated for the practitioner with this role
     /// </summary>
     public List<Endpoint> Endpoints { get; set; }
 

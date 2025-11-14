@@ -161,4 +161,9 @@ public class Medication : PatientBase
     /// Gets or sets the Medication reference
     /// </summary>
     public string MedicationReference { get; set; }
+        
+    /// <summary>
+    /// Gets or sets the Medication route i.e., orally/injected
+    /// </summary>
+    public CodeValue Route { get; set; }
 }
