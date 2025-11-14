@@ -1,4 +1,6 @@
-﻿namespace DarenaHealth.Models.HR;
+﻿using DarenaHealth.Models.HR.Enums;
+
+namespace DarenaHealth.Models.HR;
 
 /// <summary>
 /// Model that represents a phone number
@@ -11,7 +13,7 @@ public class Phone
     /// <param name="number">The phone number</param>
     /// <param name="type">The type of phone number. (Default: 'Cell')</param>
     /// <param name="isPrimary">Indicates if the phone number is primary. (Default: 'false')</param>
-    public Phone(string number, string type = "Cell", bool isPrimary = false)
+    public Phone(string number, ContactPointUse type = ContactPointUse.Mobile, bool isPrimary = false)
     {
         IsPrimary = isPrimary;
         Number = number;
@@ -31,5 +33,5 @@ public class Phone
     /// <summary>
     /// Gets or sets the phone type
     /// </summary>
-    public string Type { get; set; }
+    public ContactPointUse Type { get; set; }
 }
