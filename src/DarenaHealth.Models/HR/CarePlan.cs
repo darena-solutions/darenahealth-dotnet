@@ -23,11 +23,6 @@ public class CarePlan : PatientBase
     public MedicationAuthor Author { get; set; }
 
     /// <summary>
-    /// Gets or sets the plan text
-    /// </summary>
-    public string Text { get; set; }
-
-    /// <summary>
     /// Indicates whether the plan is currently being acted upon, represents future intentions or is now a historical record.
     /// </summary>
     public RequestStatus Status { get; set; }
