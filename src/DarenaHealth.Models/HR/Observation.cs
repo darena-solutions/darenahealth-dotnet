@@ -216,10 +216,7 @@ public class Observation : PatientBase
         /// </summary>
         public interface IComponent
         {
-            /// <summary>
-            /// Gets or sets the name of the component data type
-            /// </summary>
-            string TypeName { get; set; }
+
         }
 
         /// <summary>
@@ -227,9 +224,6 @@ public class Observation : PatientBase
         /// </summary>
         public class GenericComponent : IComponent
         {
-            /// <inheritdoc />
-            public string TypeName { get; set; } = nameof(GenericComponent);
-
             /// <summary>
             /// Gets or sets the observation component code
             /// </summary>
