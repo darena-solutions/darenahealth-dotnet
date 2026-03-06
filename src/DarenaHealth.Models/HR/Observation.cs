@@ -14,7 +14,7 @@ public class Observation : PatientBase
     /// </summary>
     public Observation()
     {
-        Components = new List<ComponentCodeValue>();
+        Components = new List<IComponent>();
         Members = new List<MemberReference>();
         DerivedFrom = new List<DerivedFromReference>();
         CodeValues = new List<CodeValue>();
@@ -96,14 +96,14 @@ public class Observation : PatientBase
     public string SpecimenId { get; set; }
 
     /// <summary>
-    /// Speciment type: https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1099.54/expansion
+    /// Gets or sets the observation body site
     /// </summary>
-    public CodeValue SpecimenCode { get; set; }
+    public CodeValue BodySite { get; set; }
 
     /// <summary>
     /// Gets or sets the component slice in Observation like (Occupation Industry and Coresponding Code)
     /// </summary>
-    public List<ComponentCodeValue> Components { get; set; }
+    public List<IComponent> Components { get; set; }
 
     /// <summary>
     /// Category codes used in the US Core Observation Screening Assessment Profile to help identify the type of USCDI Health Status/Assessment data class being reported.
@@ -119,6 +119,11 @@ public class Observation : PatientBase
     /// Related Observation(s) or other resource the observation is made from
     /// </summary>
     public List<DerivedFromReference> DerivedFrom { get; set; }
+
+    /// <summary>
+    /// Focus of the observation
+    /// </summary>
+    public List<FocusReference> Focus { get; set; }
 
     /// <summary>
     /// Reference to resource which other observation were derived from
@@ -173,4 +178,90 @@ public class Observation : PatientBase
         /// </summary>
         Observation,
     }
+
+        /// <summary>
+        /// Reference to resource which are the focus of the observation
+        /// </summary>
+        public class FocusReference
+        {
+            /// <summary>
+            /// Gets or sets the id of the reference
+            /// </summary>
+            public string Id { get; set; }
+
+            /// <summary>
+            /// Gets or sets the type of the reference
+            /// </summary>
+            public FocusType Type { get; set; }
+        }
+
+        /// <summary>
+        /// Types of resources that can be the focus of an observation
+        /// </summary>
+        public enum FocusType
+        {
+            /// <summary>
+            /// Condition/Problem
+            /// </summary>
+            Problem,
+
+            /// <summary>
+            /// Procedure
+            /// </summary>
+            Procedure,
+        }
+
+        /// <summary>
+        /// Observation component
+        /// </summary>
+        public interface IComponent
+        {
+
+        }
+
+        /// <summary>
+        /// Observation component
+        /// </summary>
+        public class GenericComponent : IComponent
+        {
+            /// <summary>
+            /// Gets or sets the observation component code
+            /// </summary>
+            public CodeValue Code { get; set; }
+
+            /// <summary>
+            /// Gets or sets the coded value
+            /// </summary>
+            public CodeValue ValueCodeValue { get; set; }
+
+            /// <summary>
+            /// Gets or sets the period
+            /// </summary>
+            public TimeRange ValuePeriod { get; set; }
+
+            /// <summary>
+            /// Effective date time of the value of Observation
+            /// </summary>
+            public DateTime? ValueEffectiveDate { get; set; }
+
+            /// <summary>
+            /// Gets or sets the string value
+            /// </summary>
+            public string ValueString { get; set; }
+
+            /// <summary>
+            /// Gets or sets a value indicating whether this observation's outcome was <c>true</c> or <c>false</c>
+            /// </summary>
+            public bool? ValueBoolean { get; set; }
+
+            /// <summary>
+            /// Gets or sets the quantity value
+            /// </summary>
+            public Quantity ValueQuantity { get; set; }
+
+            /// <summary>
+            /// Gets or sets the coded value for a missing action or observation
+            /// </summary>
+            public CodeValue NotDoneReason { get; set; }
+        }
 }

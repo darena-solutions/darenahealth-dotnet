@@ -5,7 +5,7 @@ namespace DarenaHealth.Models.HR;
 /// <summary>
 /// Observation component
 /// </summary>
-public class ComponentCodeValue
+public class ComponentCodeValue : Observation.IComponent
 {
     /// <summary>
     /// Gets or sets the observation component type

@@ -22,7 +22,7 @@ public class Procedure : PatientBase
     }
 
     /// <summary>
-    /// Gets or sets the coded body site for procedure
+    /// Gets or sets the procedure body site
     /// </summary>
     public CodeValue BodySite { get; set; }
 
@@ -82,15 +82,10 @@ public class Procedure : PatientBase
     public string ResultId { get; set; }
 
     /// <summary>
-    /// Gets or sets the text description for procedure
-    /// </summary>
-    public string Text { get; set; }
-
-    /// <summary>
     /// Reference to the reason for this procedure
     /// </summary>
     public List<SourceReference> Source { get; set; }
-        
+
     /// <summary>
     /// Get the focal device of the procedure
     /// </summary>
@@ -145,7 +140,7 @@ public class Procedure : PatientBase
         /// </summary>
         ServiceRequest,
     }
-    
+
     /// <summary>
     /// Procedure Manipulated, implanted, or removed device
     /// </summary>

@@ -49,4 +49,14 @@ public class PatientBase
     /// To be used as resource id for all elements
     /// </summary>
     public string ResourceId { get; set; }
+
+    /// <summary>
+    /// Gets or sets a list of fhir profiles that this resource should be validated against
+    /// </summary>
+    public List<string> Profiles { get; set; }
+
+    /// <summary>
+    /// Gets or sets a text summary of the resource
+    /// </summary>
+    public string Text { get; set; }
 }
