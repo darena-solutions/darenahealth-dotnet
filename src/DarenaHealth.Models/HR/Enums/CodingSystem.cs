@@ -263,4 +263,36 @@ public enum CodingSystem
     /// http://terminology.hl7.org/CodeSystem/v3-ActReason
     /// </summary>
     ActReason = 51,
+
+    /// <summary>
+    /// The value is an ICD10CM code
+    /// </summary>
+    Icd10Cm = 52,
+
+    /// <summary>
+    /// Endpoint Payload Type Simple
+    /// http://terminology.hl7.org/CodeSystem/endpoint-payload-type
+    /// </summary>
+    EndpointPayloadTypeHl7 = 53,
+
+    /// <summary>
+    /// Endpoint Payload Type
+    /// urn:oid:1.3.6.1.4.1.19376.1.2.3
+    /// </summary>
+    EndpointPayloadType = 54,
+
+    /// <summary>
+    /// AHA NUBC Patient Discharge Status Codes
+    /// </summary>
+    NubcPatientDischargeStatusCodes = 55,
+
+    /// <summary>
+    /// http://terminology.hl7.org/CodeSystem/discharge-disposition
+    /// </summary>
+    DischargeDisposition = 56,
+
+    /// <summary>
+    /// http://hl7.org/fhir/CodeSystem/task-code
+    /// </summary>
+    TaskCode = 57,
 }
