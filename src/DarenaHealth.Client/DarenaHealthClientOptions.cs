@@ -1,6 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using Hl7.Fhir.Model;
+using DarenaHealth.Client.Internal;
 using Hl7.Fhir.Serialization;
 
 namespace DarenaHealth.Client;
@@ -38,8 +38,10 @@ public class DarenaHealthClientOptions
         {
             DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            NumberHandling = JsonNumberHandling.AllowReadingFromString,
         };
         JsonOptions.Converters.Add(new JsonStringEnumConverter());
+        JsonOptions.Converters.Add(new ObservationComponentConverter());
         FhirJsonOptions = JsonOptions.ForFhir();
     }
 
