@@ -38,6 +38,7 @@ public class DarenaHealthClientOptions
         {
             DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            PropertyNameCaseInsensitive = true,
             NumberHandling = JsonNumberHandling.AllowReadingFromString,
         };
         JsonOptions.Converters.Add(new JsonStringEnumConverter());
