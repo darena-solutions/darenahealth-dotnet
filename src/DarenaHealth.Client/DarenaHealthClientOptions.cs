@@ -56,7 +56,7 @@ public class DarenaHealthClientOptions
     public string ClientSecret { get; }
 
     /// <summary>
-    /// Gets the acceess scope
+    /// Gets the access scope
     /// </summary>
     public string Scope { get; }
 
