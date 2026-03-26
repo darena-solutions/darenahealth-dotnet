@@ -58,29 +58,4 @@ public class Name
     /// Gets or sets the time period for the Name
     /// </summary>
     public TimeRange Period { get; set; }
-
-    /// <summary>
-    /// Gets the full name derived by combining the prefixes, last name,
-    /// first name, and middle names
-    /// </summary>
-    public string FullName
-    {
-        get
-        {
-            var list = new List<string>();
-            if (Prefixes != null && Prefixes.Any())
-                list.AddRange(Prefixes);
-
-            if (!string.IsNullOrWhiteSpace(First))
-                list.Add(First);
-
-            if (MiddleNames != null && MiddleNames.Any())
-                list.AddRange(MiddleNames);
-
-            if (!string.IsNullOrWhiteSpace(Last))
-                list.Add(Last);
-
-            return list.Any() ? string.Join(" ", list) : null;
-        }
-    }
 }

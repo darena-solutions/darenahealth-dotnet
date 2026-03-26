@@ -96,6 +96,11 @@ public class Observation : PatientBase
     public string SpecimenId { get; set; }
 
     /// <summary>
+    /// Specimen type https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1099.54/expansion
+    /// </summary>
+    public CodeValue SpecimenCode { get; set; }
+
+    /// <summary>
     /// Gets or sets the observation body site
     /// </summary>
     public CodeValue BodySite { get; set; }

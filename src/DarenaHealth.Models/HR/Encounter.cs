@@ -33,6 +33,7 @@ public class Encounter : BaseDto
         DiagnosticReports = new List<DiagnosticReport>();
         Coverage = new List<Coverage>();
         Documents = new List<Document>();
+        Endpoints = new List<Endpoint>();
     }
 
     /// <summary>
@@ -219,4 +220,9 @@ public class Encounter : BaseDto
     /// Gets or sets the list of documents for encounter
     /// </summary>
     public List<Document> Documents { get; set; }
+
+    /// <summary>
+    /// Gets or sets the list of documents for encounter
+    /// </summary>
+    public List<Endpoint> Endpoints { get; set; }
 }
