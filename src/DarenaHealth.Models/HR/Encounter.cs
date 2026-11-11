@@ -26,6 +26,7 @@ public class Encounter : BaseDto
         Observations = new List<Observation>();
         CarePlanItems = new List<CarePlan>();
         Devices = new List<Device>();
+        DeviceRequests = new List<DeviceRequest>();
         Organizations = new List<Organization>();
         CareTeams = new List<CareTeam>();
         Goals = new List<Goal>();
@@ -185,6 +186,11 @@ public class Encounter : BaseDto
     /// Gets or sets the list of devices for encounter
     /// </summary>
     public List<Device> Devices { get; set; }
+
+    /// <summary>
+    /// Gets or sets the list of device requests for encounter
+    /// </summary>
+    public List<DeviceRequest> DeviceRequests { get; set; }
 
     /// <summary>
     /// Gets or sets the list of locations for encounter
